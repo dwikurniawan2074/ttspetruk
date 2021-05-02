@@ -31,8 +31,14 @@ return simpan;
 
 //char *reverse(char *);         //nur
 char *reverse(char *a){
-reverse(a,a+15);
-return a;
+int panjang_huruf = strlen(a);
+int nentuin = 0;
+static char simpan_reverse[16];
+for (int i = panjang_huruf-1; i>=0;i--){
+    simpan_reverse[nentuin] = a[i];
+    nentuin++;
+}
+return simpan_reverse;
 
 }
 
