@@ -58,14 +58,15 @@ while (n<=15){
     }
 }
 
-//bool searchHorizontal(char *); //satria
+//bool searchHorizontal(char *); //satria //revisi nur
 bool searchHorizontal(char *a){
 int n = 0;
 int boolean = 0;
 static char horizontal[16];
-char *ngecek = strstr(horizontal,a);
-char *ngecekreverse = strstr(reverse(horizontal),a);
+
 while (n<=15){
+    char *ngecek = strstr(horizontal,a);
+    char *ngecekreverse = strstr(reverse(horizontal),a);
     for (int i = 0;i<16;i++){
         horizontal [i] = words[n][i];
     }
@@ -75,9 +76,9 @@ while (n<=15){
     } else if (ngecekreverse){
     boolean++;
     }n++;
-    return boolean;
-}
 
+}
+    return boolean;
 }
 
 
