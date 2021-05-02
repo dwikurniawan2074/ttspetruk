@@ -36,8 +36,24 @@ return a;
 
 }
 
-bool searchVertical(char *);   //satria
-bool searchHorizontal(char *); //
+//bool searchVertical(char *);   //satria
+bool searchVertical(char *a){
+int n=0;
+int boolean = 0;
+char *ngecek = strstr(getWordVertical(n),a);
+char *ngecekreverse = strstr(reverse(getWordVertical(n)),a);
+while (n<=15){
+    if (ngecek){
+        boolean++;
+    } else if (ngecekreverse){
+    boolean++;
+    }n++;
+    return boolean;
+    }
+}
+
+//bool searchHorizontal(char *); //
+
 
 
 int main()
