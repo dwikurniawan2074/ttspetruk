@@ -29,7 +29,13 @@ for (int i = 0;i<16;i++){
 return simpan;
 }
 
-char *reverse(char *);         //nur
+//char *reverse(char *);         //nur
+char *reverse(char *a){
+reverse(a,a+15);
+return a;
+
+}
+
 bool searchVertical(char *);   //dwi
 bool searchHorizontal(char *); //
 
