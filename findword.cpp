@@ -20,7 +20,7 @@ const int cols = 16, rows = 15;
                                 "pdcrzmsngrdnrpz",
                                 "ohnkzwaterjgtra"};
 
-//char *getWordVertical(int);    //satria
+//char *getWordVertical(int);    //dwi
 char *getWordVertical(int a){
 static char simpan [16];
 for (int i = 0;i<16;i++){
@@ -36,7 +36,7 @@ return a;
 
 }
 
-bool searchVertical(char *);   //dwi
+bool searchVertical(char *);   //satria
 bool searchHorizontal(char *); //
 
 
