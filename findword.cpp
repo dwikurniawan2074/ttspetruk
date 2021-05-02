@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 #include <cstring>
 
 using namespace std;
@@ -20,7 +21,29 @@ const int cols = 16, rows = 15;
                                 "pdcrzmsngrdnrpz",
                                 "ohnkzwaterjgtra"};
 
-//char *getWordVertical(int);    //dwi
+char *getWordVertical(int a);    //nur
+char *reverse(char *a );         //dwi
+bool searchVertical(char *a );   //satria
+bool searchHorizontal(char *a ); //satria
+
+
+int main()
+{
+    char word[16];
+    int n;
+    cin>>n;
+    cin.ignore(1,'\n');
+    for (int i=0;i<n;i++){
+        cin.getline(word,16,'\n');
+        if (searchVertical(word) || searchHorizontal(word))
+            cout << "Ada\n";
+        else
+            cout << "Tidak Ada\n";
+    }
+    return 0;
+}
+
+//nur
 char *getWordVertical(int a){
 static char simpan [16];
 for (int i = 0;i<16;i++){
@@ -29,7 +52,7 @@ for (int i = 0;i<16;i++){
 return simpan;
 }
 
-//char *reverse(char *);         //nur
+//dwi
 char *reverse(char *a){
 int panjang_huruf = strlen(a);
 int nentuin = 0;
@@ -39,26 +62,28 @@ for (int i = panjang_huruf-1; i>=0;i--){
     nentuin++;
 }
 return simpan_reverse;
-
 }
 
-//bool searchVertical(char *);   //satria
+//satria
 bool searchVertical(char *a){
 int n=0;
 int boolean = 0;
-char *ngecek = strstr(getWordVertical(n),a);
-char *ngecekreverse = strstr(reverse(getWordVertical(n)),a);
+
 while (n<=15){
+    char *ngecek = strstr(getWordVertical(n),a);
+    char *ngecekreverse = strstr(reverse(getWordVertical(n)),a);
     if (ngecek){
         boolean++;
     } else if (ngecekreverse){
     boolean++;
     }n++;
-    return boolean;
+
     }
+return boolean;
+
 }
 
-//bool searchHorizontal(char *); //satria //revisi nur
+//satria
 bool searchHorizontal(char *a){
 int n = 0;
 int boolean = 0;
@@ -79,21 +104,4 @@ while (n<=15){
 
 }
     return boolean;
-}
-
-
-
-int main()
-{
-    char word[16];
-    int n;
-    cin>>n;
-    for (int i=0;i<n;i++){
-        cin.getline(word,16,'\n');
-        if (searchVertical(word) || searchHorizontal(word))
-            cout << "Ada\n";
-        else 
-            cout << "Tidak Ada\n";
-    }
-    return 0;
 }
