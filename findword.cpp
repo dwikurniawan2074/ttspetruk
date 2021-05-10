@@ -2,6 +2,15 @@
 #include <algorithm>
 #include <cstring>
 
+/*
+Nama Anggota Kelompok : 
+Dwi Kurniawan (2017051074)
+Nur Setiowati (2017051013)
+Satria Sapta Nugraha (2017051022)
+                     
+Link Github : https://github.com/dwikurniawan2074/ttspetruk/edit/main/findword.cpp
+*/
+
 using namespace std;
 const int cols = 16, rows = 15;
 
